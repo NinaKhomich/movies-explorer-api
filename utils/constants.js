@@ -1,0 +1,10 @@
+const ERROR_CODE = {
+  SERVER_ERROR: 500,
+  DUPLICATE_KEY: 11000,
+};
+
+const SUCCESS_CODE = {
+  CREATED: 201,
+};
+
+module.exports = { ERROR_CODE, SUCCESS_CODE };
