@@ -54,7 +54,7 @@ const getMovies = (req, res, next) => {
 };
 
 const deleteMovieById = (req, res, next) => {
-  Movie.findById(req.params.movieId)
+  Movie.findById(req.params._id)
     .then((movie) => {
       if (!movie) throw new NotFoundError('Фильм не найден');
       if (movie.owner.toString() !== req.user._id) {
@@ -76,3 +76,19 @@ module.exports = {
   createMovie,
   deleteMovieById,
 };
+
+// {
+//   "country": "Великобритания",
+//   "director": "Уилл Лавлейс, Дилан Сотерн",
+//   "duration": 104,
+//   "year": "2010",
+//   "description": "Затеянный по та",
+//   "image": "https://api.nomoreparties.co/beatfilm-movies/uploads/blur_a43fcf463d.jpeg",
+//   "trailerLink": "https://www.youtube.com/watch?v=6iYxdghpJZY",
+//   "thumbnail": "https://api.nomoreparties.co/uploads/thumbnail_blur_a43fcf463d.jpeg",
+//   "owner": "64ee6722a621a72e9ad15bd6",
+//   "movieId": 3,
+//   "nameRU": " Без обратного пути",
+//   "nameEN": "No Distance Left to Run",
+//   "_id": "64ee685ca621a72e9ad15bdb",
+//   "__v": 0}
